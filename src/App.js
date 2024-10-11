@@ -14,7 +14,7 @@ const App = () => {
 
     useEffect(() => {
         // Fetch app categories from the backend
-        axios.get('http://127.0.0.1:8000/api/categories/')
+        axios.get('https://appcostcalculator.onrender.com/api/categories/')
             .then(response => {
                 setCategories(response.data);
             })
@@ -33,7 +33,7 @@ const App = () => {
         setTotalCost(0); // Reset total cost
 
         // Fetch features for the selected category
-        axios.get(`http://127.0.0.1:8000/api/features/?category_id=${categoryId}`)
+        axios.get(`https://appcostcalculator.onrender.com/api/features/?category_id=${categoryId}`)
             .then(response => {
                 setFeatures(response.data);
             })
