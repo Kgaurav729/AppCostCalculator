@@ -92,9 +92,10 @@ WSGI_APPLICATION = 'appcostcalculator.wsgi.application'
 #     }
 # }
 
+DATABASE_URL = os.environ.get('DATABASE_URL', 'postgresql://appcostcalculator_db_user:DmoRokxmyWr7kTmm6f5LBkAs1rtshcW4@dpg-cs4k498gph6c73c36sl0-a.oregon-postgres.render.com/appcostcalculator_db')
 
 DATABASES = {
-    'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
+    'default': dj_database_url.config(default=DATABASE_URL)
 }
 
 # Password validation
