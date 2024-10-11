@@ -21,12 +21,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-%$d=un-qm&ln-54cp%2au#gv%_16@qo&u^ntmz#60nvk_136ky'
+# SECRET_KEY = 'django-insecure-%$d=un-qm&ln-54cp%2au#gv%_16@qo&u^ntmz#60nvk_136ky'
+SECRET_KEY=os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG","False").lower()=="true"
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = os.environ.get("ALLOWED HOSTS").split(" ")
 
 
 # Application definition
@@ -91,8 +92,10 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+database_url=os.environ.get("DATBASE_URL")
 #postgressql external url
-DATABASES["default"]=dj_database_url.parse("postgresql://appcostcalculator_db_7d35_user:32huP5CcDIldCNAgsYUPClRbBtt1U8mU@dpg-cs4kvobtq21c73fvl0l0-a.oregon-postgres.render.com/appcostcalculator_db_7d35")
+DATABASES["default"]=dj_database_url.parse(database_url)
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
