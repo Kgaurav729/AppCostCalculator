@@ -85,18 +85,14 @@ WSGI_APPLICATION = 'appcostcalculator.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-DATABASE_URL = os.environ.get('DATABASE_URL', 'postgresql://appcostcalculator_db_user:DmoRokxmyWr7kTmm6f5LBkAs1rtshcW4@dpg-cs4k498gph6c73c36sl0-a.oregon-postgres.render.com/appcostcalculator_db')
-
 DATABASES = {
-    'default': dj_database_url.config(default=DATABASE_URL)
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+#postgressql external url
+DATABASES["default"]=dj_database_url.parse("postgresql://appcostcalculator_db_7d35_user:32huP5CcDIldCNAgsYUPClRbBtt1U8mU@dpg-cs4kvobtq21c73fvl0l0-a.oregon-postgres.render.com/appcostcalculator_db_7d35")
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
