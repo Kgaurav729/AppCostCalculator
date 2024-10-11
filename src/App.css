@@ -1,0 +1,24 @@
+/* src/App.css */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient colors */
+  color: white;
+}
+
+.card {
+  border-radius: 10px; /* Rounded corners for the card */
+  background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+}
+
+.label {
+  font-family: 'Arial', sans-serif; /* Change to your desired font */
+}
+
+.select {
+  font-family: 'Arial', sans-serif; /* Change to your desired font */
+}
