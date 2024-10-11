@@ -28,3 +28,6 @@ def calculate_cost(request):
     total_hours = sum(feature.hours for feature in features)
     total_cost = total_hours * 10  # Assuming $10/hour as mentioned
     return JsonResponse({'total_cost': total_cost})
+
+# def home(request):
+#     return HttpResponse("Welcome to the App Cost Calculator Backend")
