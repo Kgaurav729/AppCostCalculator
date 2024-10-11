@@ -75,9 +75,10 @@ TEMPLATES = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # React frontend URL
+    "http://localhost:3000",  
+    "https://appcostcalculator.netlify.app" # React frontend URL
 ]
-CSRF_TRUSTED_ORIGINS = ['http://localhost:3000']
+# CSRF_TRUSTED_ORIGINS = ['http://localhost:3000', "https://appcostcalculator.netlify.app"]
 
 # # Optionally, for all origins
 # CORS_ALLOW_ALL_ORIGINS = True
