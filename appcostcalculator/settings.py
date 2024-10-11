@@ -95,7 +95,7 @@ DATABASES = {
     }
 }
 
-database_url=os.environ.get("DATBASE_URL")
+database_url=os.environ.get("DATABASE_URL")
 #postgressql external url
 DATABASES["default"]=dj_database_url.parse(database_url)
 
